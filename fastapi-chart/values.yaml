@@ -1,0 +1,26 @@
+replicaCount: 1
+
+image:
+  repository: 9971215148/fastapi-demo
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 8000
+
+ingress:
+  enabled: false
+
+serviceAccount:
+  create: true
+  name: ""
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 80
+
+resources: {}
+
